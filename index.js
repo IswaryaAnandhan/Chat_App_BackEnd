@@ -14,7 +14,9 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
+app.get("/", function (req, res) {
+    res.send("<h1>Simple Chat App Server...</h1>");
+  });
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
